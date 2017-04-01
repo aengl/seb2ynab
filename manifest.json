@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "seb2ynab",
-  "version": "0.1",
+  "name": "SEB YNAB Exporter",
+  "version": "1.0",
   "background": {
     "persistent": false,
     "scripts": ["background.js"]
