@@ -13,5 +13,5 @@
   "browser_action": {
     "default_title": "SEB YNAB Exporter"
   },
-  "permissions": ["activeTab"]
+  "permissions": ["activeTab", "downloads"]
 }

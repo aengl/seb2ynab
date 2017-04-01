@@ -1,4 +1,9 @@
 chrome.browserAction.onClicked.addListener(tab => {
-  console.warn('click!');
-  chrome.tabs.sendMessage(tab.id, {text: 'foo'}, console.warn);
+  chrome.tabs.sendMessage(tab.id, {text: 'foo'}, data => {
+    console.log(data);
+    chrome.downloads.download({
+      url: 'data:text/plain,' + encodeURIComponent(data),
+      filename: 'seb.csv',
+    });
+  });
 });
