@@ -23,13 +23,14 @@ function extractTable() {
 }
 
 function tableToCSV(table) {
-  return 'Date,Payee,Category,Memo,Outflow,Inflow\n' + table
+  return table
     .map(row => `${row.date},,,${row.text},${row.out},${row.in}`)
     .join('\n');
 }
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.text === 'foo') {
-    sendResponse(tableToCSV(extractTable()));
+    const table = extractTable();
+    sendResponse(table.length ? tableToCSV(table) : null);
   }
 });
