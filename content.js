@@ -25,7 +25,7 @@ function extractTable() {
       date: formatDate(new Date(row[0])),
       payee: getPayee(row[1]),
       in: row[2],
-      out: row[3],
+      out: row[3].substr(1),
     });
   }
 
