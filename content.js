@@ -23,8 +23,7 @@ function extractTable() {
 }
 
 function tableToCSV(table) {
-  // YNAB CSV: Date,Payee,Category,Memo,Outflow,Inflow
-  return table
+  return 'Date,Payee,Category,Memo,Outflow,Inflow\n' + table
     .map(row => `${row.date},,,${row.text},${row.out},${row.in}`)
     .join('\n');
 }
