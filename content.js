@@ -10,8 +10,12 @@ function extractTable() {
     for (let j = 1; j < 6; j += 1) {
       row.push(nodesSnapshot.snapshotItem(i + j).textContent);
     }
+    const date = new Date(row[0]);
+    const dd = date.getDate();
+    const mm = date.getMonth() + 1;
+    const yyyy = date.getFullYear();
     table.push({
-      date: row[0],
+      date: `${dd}/${mm}/${yyyy}`,
       text: row[1],
       in: row[2],
       out: row[3],
