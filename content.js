@@ -27,9 +27,11 @@ function extractTable() {
 }
 
 function tableToCSV(table) {
-  return table
+  const header = 'Date,Payee,Category,Memo,Outflow,Inflow';
+  const tableData = table
     .map(row => `${row.date},,,${row.text},${row.out},${row.in}`)
     .join('\n');
+  return `${header}\n${tableData}`;
 }
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
